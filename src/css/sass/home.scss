@@ -1,0 +1,82 @@
+$home_image: url(../assets/images/kicks_splash.jpg);
+$hero_font_color: rgb(201, 201, 201);
+$hero_background: rgba(128, 174, 189, 0.514);
+$hero_underline: rgb(44, 37, 41);
+$header_bg: rgba(0, 0, 0, 0.6);
+
+.home {
+  height: 100vh;
+
+  display: flex;
+  justify-content: flex-end;
+
+  &__background-parent {
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+  }
+
+  &__background-child {
+    height: 100%;
+    width: 100vw;
+
+    background-image: $home_image;
+    background-size: cover;
+
+    transition: all 1s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__hero {
+    width: 30vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    position: absolute;
+    left: 850px;
+    top: 200px;
+
+    color: $hero_font_color;
+
+    background-color: transparent;
+  }
+
+  a {
+    margin-top: 1rem;
+    margin-left: -30px;
+    padding: 0.5rem;
+
+    width: 25%;
+
+    color: $hero_underline;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: $hero_font_color;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+    background-color: $hero_background;
+    border-bottom: solid $hero_underline 4px;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+    background-color: $hero_background;
+    border-bottom: solid $hero_underline 4px;
+  }
+}

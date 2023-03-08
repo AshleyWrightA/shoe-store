@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <>
       <div className="header" style={headerBackground}>
-        <h1>Cartomancy</h1>
+        <h1>Kicks</h1>
         <nav className="header__nav">
           <Link to="../">Home</Link>
           <Link to="../shop">Shop</Link>
