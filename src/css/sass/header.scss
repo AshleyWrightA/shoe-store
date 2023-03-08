@@ -1,0 +1,38 @@
+.header {
+  padding: 2rem 0;
+
+  height: 6vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  z-index: 9999;
+
+  &__nav {
+    padding-right: 10%;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    gap: 3rem;
+  }
+
+  h1 {
+    padding-left: 10%;
+
+    color: white;
+    font-size: 4.8rem;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  a {
+    text-decoration: none;
+    &:visited {
+      color: white;
+    }
+  }
+}
