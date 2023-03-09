@@ -2,11 +2,12 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "module": "es2022",
+    "target": "es2022",
     "allowJs": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["vite/client"]
   },
   "files": ["src/index.tsx"]
 }

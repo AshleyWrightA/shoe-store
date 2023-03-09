@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import "../css/header.min.css";
+import Navbar from "../components/Navbar";
+import "../css/navbar.min.css";
 import "../css/home.min.css";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Navbar />
       <div className="home">
         <div className="home__background-parent">
           <div className="home__background-child"></div>

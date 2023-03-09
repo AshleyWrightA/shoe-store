@@ -1,10 +1,10 @@
-import Header from "../components/Header";
-import "../css/header.min.css";
+import Navbar from "../components/Navbar";
+import "../css/navbar.min.css";
 
 export default function Contact() {
   return (
     <>
-      <Header />
+      <Navbar />
       <div></div>
     </>
   );
