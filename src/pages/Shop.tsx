@@ -11,7 +11,6 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 
 //CSS
-import "../css/navbar.min.css";
 import "../css/shop.min.css";
 
 export default function Shop() {

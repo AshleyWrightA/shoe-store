@@ -9,8 +9,10 @@ export default function Navbar() {
     navBarBackground = { backgroundColor: "rgba(0, 0, 0, 0.6)" };
   } else if (pageRoute.pathname === "/shop") {
     navBarBackground = { backgroundColor: "$shop_background" };
-  } else {
-    navBarBackground = { backgroundColor: "rgb(0,0,0)" };
+  } else if (pageRoute.pathname === "/contact") {
+    navBarBackground = { backgroundColor: "$contact_background" };
+  } else if (pageRoute.pathname === "/cart") {
+    navBarBackground = { backgroundColor: "$cart_background" };
   }
   return (
     <>

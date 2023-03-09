@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
-import "../css/navbar.min.css";
+
+import "../css/contact.min.css";
 
 export default function Contact() {
   return (
     <>
       <Navbar />
-      <div></div>
+      <div className="contact"></div>
     </>
   );
 }
