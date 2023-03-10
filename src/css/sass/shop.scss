@@ -3,6 +3,8 @@ $shop_background: rgb(37, 37, 37);
 .shop {
   height: 100vh;
 
+  padding: 4rem;
+
   display: flex;
 
   background-color: $shop_background;
@@ -13,9 +15,6 @@ $shop_background: rgb(37, 37, 37);
   }
 
   &__container {
-    margin-top: 120px;
-    margin-right: 10%;
-
     height: 70%;
     width: 100%;
 

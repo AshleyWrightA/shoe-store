@@ -13,26 +13,14 @@ export default function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route
-          path="/shop"
-          element={
-            <CartContext.Provider value={value}>
-              <Shop />
-            </CartContext.Provider>
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <CartContext.Provider value={value}>
-              <Cart />
-            </CartContext.Provider>
-          }
-        />
-      </Routes>
+      <CartContext.Provider value={value}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </CartContext.Provider>
     </>
   );
 }

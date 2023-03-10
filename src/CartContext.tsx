@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-interface ICartContext {
+export interface ICartContext {
   cartItems: number;
   setCartItems: React.Dispatch<React.SetStateAction<number>>;
 }

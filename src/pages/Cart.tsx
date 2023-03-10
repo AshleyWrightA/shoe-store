@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";

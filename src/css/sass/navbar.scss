@@ -20,6 +20,15 @@
     gap: 3rem;
   }
 
+  &__cart {
+    display: flex;
+  }
+
+  svg {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
   h1 {
     padding-left: 10%;
 
@@ -30,6 +39,8 @@
   }
 
   a {
+    line-height: 2rem;
+    text-align: center;
     text-decoration: none;
     &:visited {
       color: white;
