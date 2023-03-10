@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 import "../css/card.min.css";
 
 interface cardProps {
@@ -9,12 +10,7 @@ interface cardProps {
 
 export default function Card(props: cardProps) {
   const { image, title, price } = props;
-  const addItemButtonRef = useRef(null);
-
-  useEffect(() => {
-    const addItemButton = addItemButtonRef.current;
-    addItemButton.addEventListener("click", addItem);
-  }, []);
+  const cartItem = useContext(CartContext);
 
   return (
     <div className="card__container">
@@ -24,12 +20,15 @@ export default function Card(props: cardProps) {
         <p className="card__price">{price}</p>
       </div>
       <div className="card__buttonwrapper">
-        <button ref={addItemButtonRef}>Add to Cart</button>
+        <button
+          onClick={() => {
+            cartItem.setCartItems(cartItem.cartItems + 1);
+          }}
+        >
+          Add to Cart
+        </button>
       </div>
+      <h1>{cartItem.cartItems} in the cart</h1>
     </div>
   );
-}
-
-function addItem() {
-  console.log("Added to cart!");
 }
