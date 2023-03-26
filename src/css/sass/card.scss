@@ -8,16 +8,21 @@
     padding: 1rem;
 
     border: solid black 1px;
+    background-color: white;
   }
 
   &__title {
     text-align: center;
   }
 
-  &__buttonwrapper {
+  &__button-wrapper {
     padding: 1rem;
 
     display: flex;
     justify-content: center;
+  }
+
+  &__button-remove {
+    background-color: red;
   }
 }

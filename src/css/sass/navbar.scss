@@ -1,8 +1,7 @@
 .navbar {
   padding: 2rem 0;
 
-  height: 6vh;
-  width: 100vw;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;
@@ -17,16 +16,22 @@
     display: flex;
     justify-content: space-evenly;
 
-    gap: 3rem;
+    gap: 2rem;
   }
 
   &__cart {
     display: flex;
   }
 
+  &__logo {
+    padding-left: 10%;
+
+    font-size: 4rem;
+  }
+
   svg {
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   h1 {
@@ -42,6 +47,7 @@
     line-height: 2rem;
     text-align: center;
     text-decoration: none;
+
     &:visited {
       color: white;
     }

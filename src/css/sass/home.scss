@@ -2,6 +2,7 @@ $home_image: url(../assets/images/kicks_splash.jpg);
 $hero_font_color: rgb(201, 201, 201);
 $hero_background: rgba(128, 174, 189, 0.514);
 $hero_underline: rgb(44, 37, 41);
+$hero_button_hover: rgb(128, 174, 189);
 
 .home {
   height: 100vh;
@@ -39,8 +40,8 @@ $hero_underline: rgb(44, 37, 41);
     gap: 1rem;
 
     position: absolute;
-    left: 850px;
-    top: 200px;
+    top: 30%;
+    left: 60%;
 
     color: $hero_font_color;
 
@@ -52,18 +53,22 @@ $hero_underline: rgb(44, 37, 41);
     margin-left: -30px;
     padding: 0.5rem;
 
-    width: 25%;
+    width: 30%;
 
     color: $hero_underline;
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     background-color: $hero_font_color;
+
+    &:hover {
+      background-color: $hero_button_hover;
+    }
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 4.8rem;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -71,7 +76,7 @@ $hero_underline: rgb(44, 37, 41);
     border-bottom: solid $hero_underline 4px;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 3.6rem;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 

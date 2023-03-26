@@ -1,25 +1,24 @@
 $shop_background: rgb(37, 37, 37);
 
 .shop {
-  height: 100vh;
-
   padding: 4rem;
+
+  height: 100%;
 
   display: flex;
 
   background-color: $shop_background;
 
-  &__nav {
+  &__side-nav {
     height: 100%;
-    width: 35vw;
+    width: 40vw;
   }
 
   &__container {
-    height: 70%;
-    width: 100%;
+    height: 50%;
 
     display: grid;
-    grid: repeat(2, 1fr) / repeat(5, 1fr);
+    grid: repeat(1, 1fr) / repeat(5, 1fr);
     gap: 1rem;
   }
 }

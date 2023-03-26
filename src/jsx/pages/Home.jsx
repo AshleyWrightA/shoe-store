@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import "../css/home.min.css";
+import "../../css/home.min.css";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         </div>
         <div className="home__hero">
           <h1>Kicks </h1>
-          <h2>straight to your doorstep.</h2>
+          <h2>Straight to your doorstep.</h2>
           <Link to="/shop" className="home__shop">
             Shop
           </Link>
