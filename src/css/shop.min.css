@@ -1,1 +1,1 @@
-.shop{padding:4rem;height:100%;display:flex;background-color:#252525}.shop__side-nav{height:100%;width:40vw}.shop__container{height:50%;display:grid;grid:repeat(1, 1fr)/repeat(5, 1fr);gap:1rem}/*# sourceMappingURL=shop.min.css.map */
+.shop{padding:3rem;display:flex;scrollbar-width:none;background-color:#252525}.shop__side-nav{height:100%;width:15vw}.shop__container{margin-top:4rem;height:50%;display:grid;grid:repeat(1, 1fr)/repeat(4, 1fr);gap:1rem}/*# sourceMappingURL=shop.min.css.map */

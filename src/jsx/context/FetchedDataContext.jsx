@@ -2,7 +2,7 @@
 
 //Firebase
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, setDoc } from "firebase/firestore";
 //React
 import { createContext, useEffect, useState } from "react";
 
@@ -16,12 +16,23 @@ export function FetchedDataProvider(props) {
     getStoreData().then((data) => {
       for (let i = 0; i < data.length; i++) {
         let item = {};
-        item["key"] = data[i].key;
+        item["id"] = data[i].id;
         item["sysName"] = data[i].sys_name;
         item["displayName"] = data[i].display_name;
         item["imgPath"] = data[i].img;
+        item["price"] = data[i].price;
         fetchedDataArr.push(item);
       }
+      fetchedDataArr.sort((a, b) => {
+        console.log("SORT");
+        if (a.id < b.id) {
+          return -1;
+        } else if (a.id > b.id) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
       setFetchedData(fetchedDataArr);
     });
   }, []);

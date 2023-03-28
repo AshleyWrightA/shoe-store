@@ -37,12 +37,12 @@ export default function Navbar() {
     <>
       <div className="navbar" style={navBarStyles}>
         <Link to="/" className="navbar__logo">
-          Kicks
+          Boots
         </Link>
         <nav className="navbar__nav">
           <Link to="../">Home</Link>
           <Link to="../shop">Shop</Link>
-          <Link to="../contact">Contact</Link>
+          <Link to="../about">About</Link>
           <Link to="../cart" className="navbar__cart">
             <Icon className="navbar__cart-icon" icon="ic:outline-shopping-cart" />
             <p className="navbar__cart-count"></p>

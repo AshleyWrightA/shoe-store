@@ -11,10 +11,10 @@ export default function Home() {
           <div className="home__background-child"></div>
         </div>
         <div className="home__hero">
-          <h1>Kicks </h1>
-          <h2>Straight to your doorstep.</h2>
-          <Link to="/shop" className="home__shop">
-            Shop
+          <h1 className="home__intro">Boots </h1>
+          <h2 className="home__intro-2">Straight to your doorstep.</h2>
+          <Link to="/shop" className="home__anchor-shop">
+            View Cataloge
           </Link>
         </div>
       </div>

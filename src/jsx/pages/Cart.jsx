@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 import { CartContext } from "../context/CartContext";
 import { FetchedDataContext } from "../context/FetchedDataContext";
 import Navbar from "../components/Navbar";
@@ -20,16 +22,33 @@ export default function Cart() {
     />
   ));
 
-  return (
-    <>
-      <Navbar />
-      <div className="cart">
-        <div className="cart__container">
-          <h1 className="cart__header">Your Cart</h1>
-          <div className="cart__items">{mappedData}</div>
-          <button className="checkout">Checkout</button>
+  if (mappedData.length > 0) {
+    return (
+      <>
+        <Navbar />
+        <div className="cart">
+          <div className="cart__container">
+            <h1 className="cart__header">Your Cart</h1>
+            <div className="cart__items">{mappedData}</div>
+            <button className="checkout">Checkout</button>
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else if (mappedData.length <= 0) {
+    return (
+      <>
+        <Navbar />
+        <div className="cart">
+          <div className="cart__container">
+            <h1 className="cart__header">Your Cart is empty</h1>
+            <Icon className="cart__icon" icon="ic:outline-shopping-cart"></Icon>
+            <Link className="cart__back" to="/shop">
+              Back to shop
+            </Link>
+          </div>
+        </div>
+      </>
+    );
+  }
 }

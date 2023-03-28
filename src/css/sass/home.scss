@@ -1,6 +1,6 @@
-$home_image: url(../assets/images/kicks_splash.jpg);
-$hero_font_color: rgb(201, 201, 201);
-$hero_background: rgba(128, 174, 189, 0.514);
+$home_image: url(../assets/images/boots_splash.jpeg);
+$hero_font_color: rgb(224, 224, 224);
+$hero_background: rgba(110, 110, 110, 0.514);
 $hero_underline: rgb(44, 37, 41);
 $hero_button_hover: rgb(128, 174, 189);
 
@@ -23,6 +23,7 @@ $hero_button_hover: rgb(128, 174, 189);
 
     background-image: $home_image;
     background-size: cover;
+    background-position: center -240px;
 
     transition: all 1s;
 
@@ -32,7 +33,7 @@ $hero_button_hover: rgb(128, 174, 189);
   }
 
   &__hero {
-    width: 30vw;
+    width: 20vw;
 
     display: flex;
     flex-direction: column;
@@ -40,8 +41,8 @@ $hero_button_hover: rgb(128, 174, 189);
     gap: 1rem;
 
     position: absolute;
-    top: 30%;
-    left: 60%;
+    top: 20%;
+    left: 70%;
 
     color: $hero_font_color;
 
@@ -53,7 +54,7 @@ $hero_button_hover: rgb(128, 174, 189);
     margin-left: -30px;
     padding: 0.5rem;
 
-    width: 30%;
+    width: 35%;
 
     color: $hero_underline;
     font-size: 3.6rem;
@@ -68,6 +69,8 @@ $hero_button_hover: rgb(128, 174, 189);
   }
 
   h1 {
+    width: 47%;
+
     font-size: 4.8rem;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -76,6 +79,8 @@ $hero_button_hover: rgb(128, 174, 189);
     border-bottom: solid $hero_underline 4px;
   }
   h2 {
+    margin-left: 30px;
+
     font-size: 3.6rem;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;

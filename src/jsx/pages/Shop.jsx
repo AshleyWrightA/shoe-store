@@ -1,6 +1,6 @@
 //React Imports
 import { Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 
 //Components
 import Navbar from "../components/Navbar";
@@ -30,6 +30,7 @@ export default function Shop() {
               imgPath={`../src/assets/images/${e.imgPath}`}
               displayName={e.displayName}
               sysName={e.sysName}
+              price={e.price}
             />
           ))}
         </div>

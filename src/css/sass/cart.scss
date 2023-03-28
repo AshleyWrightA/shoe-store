@@ -68,6 +68,28 @@ $cart-card-backgroud: rgb(235, 229, 157);
     align-items: center;
     gap: 10px;
   }
+
+  &__icon {
+    animation: rock 4.5s linear infinite;
+    -webkit-animation: rock 4.5s linear infinite;
+  }
+
+  &__back {
+    color: lightblue;
+    text-decoration: none;
+  }
+}
+
+@keyframes rock {
+  0% {
+    transform: scale(2) rotate(-30deg);
+  }
+  50% {
+    transform: scale(2) rotate(30deg);
+  }
+  100% {
+    transform: scale(2) rotate(-30deg);
+  }
 }
 
 @media (max-width: 700px) {
