@@ -1,6 +1,6 @@
 $home_image: url(../assets/images/boots_splash.jpeg);
 $hero_font_color: rgb(230, 230, 230);
-$hero_background: rgba(110, 110, 110, 0.514);
+$hero_background: rgba(110, 110, 110, 0.7);
 $hero_underline: rgb(44, 37, 41);
 $hero_button_hover: rgb(128, 174, 189);
 
@@ -60,7 +60,26 @@ $hero_button_hover: rgb(128, 174, 189);
     background-color: $hero_font_color;
 
     &:hover {
-      background-color: $hero_button_hover;
+      color: $hero_font_color;
+      background-color: $hero_background;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 70%;
+      height: 4px;
+      bottom: 0px;
+      left: 50px;
+      background-color: #000;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
     }
   }
 

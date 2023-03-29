@@ -1,4 +1,4 @@
-$navbar_font: rgb(0, 0, 0);
+$navbar_font_color: rgb(0, 0, 0);
 
 .navbar {
   padding: 2rem 0;
@@ -21,6 +21,22 @@ $navbar_font: rgb(0, 0, 0);
     gap: 2rem;
 
     font-size: 2.4rem;
+
+    a::before {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 2px;
+      bottom: -4px;
+      left: 8px;
+      background-color: #000;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    a:hover::before {
+      transform: scaleX(1);
+    }
   }
 
   &__cart {
@@ -31,7 +47,7 @@ $navbar_font: rgb(0, 0, 0);
     padding-left: 8%;
 
     font-size: 6rem;
-    text-decoration: underline solid 2px black;
+    font-weight: bold;
   }
 
   svg {
@@ -42,19 +58,22 @@ $navbar_font: rgb(0, 0, 0);
   h1 {
     padding-left: 10%;
 
-    color: $navbar_font;
+    color: $navbar_font_color;
     font-size: 4.8rem;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   a {
+    position: relative;
+
+    color: $navbar_font_color;
     line-height: 2rem;
     text-align: center;
     text-decoration: none;
 
     &:visited {
-      color: $navbar_font;
+      color: $navbar_font_color;
     }
   }
 }

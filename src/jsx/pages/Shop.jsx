@@ -27,7 +27,7 @@ export default function Shop() {
           {fetchedData.map((e) => (
             <ShopCard
               key={e.key}
-              imgPath={`../src/assets/images/${e.imgPath}`}
+              imgPath={`./assets/images/${e.imgPath}`}
               displayName={e.displayName}
               sysName={e.sysName}
               price={e.price}

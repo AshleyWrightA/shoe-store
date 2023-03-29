@@ -20,7 +20,7 @@ export default function About() {
               eveniet.
             </p>
           </div>
-          <img className="about__image" src="../../../src/assets/images/about_splash.jpg" alt="" />
+          <img className="about__image" src="./assets/images/about_splash.jpg" alt="" />
         </div>
         <div className="about__testamonials">
           <p className="about__testamonial-1 about__testamonial">

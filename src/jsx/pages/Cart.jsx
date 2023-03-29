@@ -18,7 +18,7 @@ export default function Cart() {
       key={e.key}
       name={e.displayName}
       sysName={e.sysName}
-      img={`../../../src/assets/images/${e.imgPath}`}
+      img={`./assets/images/${e.imgPath}`}
     />
   ));
 
