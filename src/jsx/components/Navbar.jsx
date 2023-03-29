@@ -19,13 +19,13 @@ export default function Navbar() {
   }, [cartItems]);
 
   if (pageRoute.pathname === "/") {
-    navBarBackground = "rgba(0,0,0,0.6)";
+    navBarBackground = "rgba(230,230,230,0.6)";
   } else if (pageRoute.pathname === "/shop") {
-    navBarBackground = "rgb(37, 37, 37)";
-  } else if (pageRoute.pathname === "/contact") {
-    navBarBackground = "rgb(37, 37, 37)";
+    navBarBackground = "rgb(230, 230, 230)";
+  } else if (pageRoute.pathname === "/about") {
+    navBarBackground = "rgb(230, 230, 230)";
   } else if (pageRoute.pathname === "/cart") {
-    navBarBackground = "rgb(37, 37, 37)";
+    navBarBackground = "rgb(230, 230, 230)";
   }
 
   const navBarStyles = {

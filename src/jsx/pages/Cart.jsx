@@ -30,7 +30,7 @@ export default function Cart() {
           <div className="cart__container">
             <h1 className="cart__header">Your Cart</h1>
             <div className="cart__items">{mappedData}</div>
-            <button className="checkout">Checkout</button>
+            <button className="cart__checkout">Checkout</button>
           </div>
         </div>
       </>

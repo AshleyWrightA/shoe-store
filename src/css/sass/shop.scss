@@ -1,11 +1,10 @@
-$shop_background: rgb(37, 37, 37);
+$shop_background: rgb(230, 230, 230);
 
 .shop {
   padding: 3rem;
 
   display: flex;
-
-  scrollbar-width: none;
+  justify-content: center;
 
   background-color: $shop_background;
 
@@ -15,12 +14,12 @@ $shop_background: rgb(37, 37, 37);
   }
 
   &__container {
-    margin-top: 4rem;
+    width: 100vw;
 
-    height: 50%;
+    margin-top: 10rem;
 
     display: grid;
-    grid: repeat(1, 1fr) / repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 1rem;
   }
 }

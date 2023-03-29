@@ -14,7 +14,7 @@ export default function Home() {
           <h1 className="home__intro">Boots </h1>
           <h2 className="home__intro-2">Straight to your doorstep.</h2>
           <Link to="/shop" className="home__anchor-shop">
-            View Cataloge
+            View Catalog
           </Link>
         </div>
       </div>

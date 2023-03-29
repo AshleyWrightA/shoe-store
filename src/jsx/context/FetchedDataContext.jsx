@@ -24,7 +24,6 @@ export function FetchedDataProvider(props) {
         fetchedDataArr.push(item);
       }
       fetchedDataArr.sort((a, b) => {
-        console.log("SORT");
         if (a.id < b.id) {
           return -1;
         } else if (a.id > b.id) {

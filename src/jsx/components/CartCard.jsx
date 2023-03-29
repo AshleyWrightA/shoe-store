@@ -11,11 +11,17 @@ export default function CartCard(props) {
       <div className="cart__cart-card-wrapper">
         <h1>{name}</h1>
         <div className="cart__cart-card-quantity">
-          <button className="cart__cart-card-remove" onClick={() => removeCartItem(sysName)}>
+          <button
+            className="cart__cart-card-remove cart__add-remove"
+            onClick={() => removeCartItem(sysName)}
+          >
             -
           </button>
           <p>{cartItems[sysName]}</p>
-          <button className="cart__cart-card-add" onClick={() => addCartItem(sysName)}>
+          <button
+            className="cart__cart-card-add cart__add-remove"
+            onClick={() => addCartItem(sysName)}
+          >
             +
           </button>
         </div>

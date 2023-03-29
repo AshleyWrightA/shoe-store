@@ -1,5 +1,5 @@
 $home_image: url(../assets/images/boots_splash.jpeg);
-$hero_font_color: rgb(224, 224, 224);
+$hero_font_color: rgb(230, 230, 230);
 $hero_background: rgba(110, 110, 110, 0.514);
 $hero_underline: rgb(44, 37, 41);
 $hero_button_hover: rgb(128, 174, 189);
@@ -23,7 +23,7 @@ $hero_button_hover: rgb(128, 174, 189);
 
     background-image: $home_image;
     background-size: cover;
-    background-position: center -240px;
+    background-position: center 100%;
 
     transition: all 1s;
 
@@ -33,15 +33,13 @@ $hero_button_hover: rgb(128, 174, 189);
   }
 
   &__hero {
-    width: 20vw;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
 
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 70%;
 
     color: $hero_font_color;
@@ -53,8 +51,6 @@ $hero_button_hover: rgb(128, 174, 189);
     margin-top: 1rem;
     margin-left: -30px;
     padding: 0.5rem;
-
-    width: 35%;
 
     color: $hero_underline;
     font-size: 3.6rem;
