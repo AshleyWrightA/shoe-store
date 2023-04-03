@@ -1,41 +1,75 @@
 //Third Party Imports
-import { useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 //Local Imports
 import { CartContext } from "../context/CartContext";
 import "../../css/navbar.min.css";
 
 export default function Navbar() {
-  const pageRoute = useLocation();
   const { cartItems } = useContext(CartContext);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [deviceNavBar, setDeviceNavBar] = useState(<DesktopNavbar />);
+  const mobileBreakPoint = 600;
 
-  let navBarBackground;
-  let navBarPosition;
-
-  //componentDidUpdate
+  //componentDidUpdate cart
   useEffect(() => {
     countCartItems(cartItems);
   }, [cartItems]);
 
-  if (pageRoute.pathname === "/") {
-    navBarBackground = "rgba(230,230,230,0.6)";
-  } else if (pageRoute.pathname === "/shop") {
-    navBarBackground = "rgb(230, 230, 230)";
-  } else if (pageRoute.pathname === "/about") {
-    navBarBackground = "rgb(230, 230, 230)";
-  } else if (pageRoute.pathname === "/cart") {
-    navBarBackground = "rgb(230, 230, 230)";
+  //componentDidUpdate screenWidth
+  useEffect(() => {
+    window.addEventListener("resize", setScreenWidth);
+    setScreenWidth(window.innerWidth);
+    if (screenWidth < mobileBreakPoint) {
+      setDeviceNavBar(<MobileNavbar />);
+    } else if (screenWidth > mobileBreakPoint) {
+      setDeviceNavBar(<DesktopNavbar />);
+    }
+  }, [screenWidth]);
+
+  //Return component based on screen size
+  return deviceNavBar;
+}
+
+function countCartItems(e) {
+  let cartCount = 0;
+  for (let item in e) {
+    if (e[item] > 0) {
+      cartCount += e[item];
+    }
   }
+  updateCartIcon(cartCount);
+}
 
-  const navBarStyles = {
-    position: navBarPosition,
-    backgroundColor: navBarBackground,
-  };
+function updateCartIcon(cartItemCount) {
+  const cartCount = document.querySelector(".navbar__cart-count");
+  cartCount.textContent = cartItemCount.toString();
+}
 
+function MobileNavbar() {
   return (
     <>
-      <div className="navbar" style={navBarStyles}>
+      <div className="navbar">
+        <Link to="/" className="navbar__logo">
+          Boots
+        </Link>
+        <nav className="navbar__nav">
+          <Icon className="navbar__bars-icon" icon="uis:bars" />
+          <Link to="../cart" className="navbar__cart">
+            <Icon className="navbar__cart-icon" icon="ic:outline-shopping-cart" />
+            <p className="navbar__cart-count"></p>
+          </Link>
+        </nav>
+      </div>
+    </>
+  );
+}
+
+function DesktopNavbar() {
+  return (
+    <>
+      <div className="navbar">
         <Link to="/" className="navbar__logo">
           Boots
         </Link>
@@ -56,19 +90,4 @@ export default function Navbar() {
       </div>
     </>
   );
-}
-
-function countCartItems(e) {
-  let cartCount = 0;
-  for (let item in e) {
-    if (e[item] > 0) {
-      cartCount += e[item];
-    }
-  }
-  updateCartIcon(cartCount);
-}
-
-function updateCartIcon(cartItemCount) {
-  const cartCount = document.querySelector(".navbar__cart-count");
-  cartCount.textContent = cartItemCount.toString();
 }

@@ -5,8 +5,6 @@ $hero_underline: rgb(44, 37, 41);
 $hero_button_hover: rgb(128, 174, 189);
 
 .home {
-  height: 100vh;
-
   display: flex;
   justify-content: flex-end;
 
@@ -102,5 +100,19 @@ $hero_button_hover: rgb(128, 174, 189);
 
     background-color: $hero_background;
     border-bottom: solid $hero_underline 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    &__hero {
+      width: 75%;
+
+      top: 30%;
+      left: 20%;
+    }
+
+    &__background-child {
+    }
   }
 }

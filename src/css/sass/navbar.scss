@@ -1,14 +1,16 @@
 $navbar_font_color: rgb(0, 0, 0);
+$navbar_bg_color: rgba(230, 230, 230, 0.6);
 
 .navbar {
   padding: 2rem 0;
 
-  height: 8rem;
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background-color: $navbar_bg_color;
 
   position: absolute;
   z-index: 9999;

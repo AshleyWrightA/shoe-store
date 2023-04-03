@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import "../../css/home.min.css";
 
 export default function Home() {
-  console.log("HOME");
   return (
     <>
       <Navbar />
