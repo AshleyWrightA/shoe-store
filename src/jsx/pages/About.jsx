@@ -7,9 +7,9 @@ export default function About() {
     <>
       <Navbar />
       <div className="about">
-        <div className="about__info">
-          <div></div>
-          <div className="about__info-wrapper">
+        <div className="about__info-section">
+          <img className="about__image" src="./assets/images/about_splash.jpg" alt="" />
+          <div className="about__info">
             <h1>Our Boots are different...or are they?</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit assumenda voluptatum
@@ -20,9 +20,8 @@ export default function About() {
               eveniet.
             </p>
           </div>
-          <img className="about__image" src="./assets/images/about_splash.jpg" alt="" />
         </div>
-        <div className="about__testamonials">
+        <div className="about__testamonial-section">
           <p className="about__testamonial-1 about__testamonial">
             Mollitia quis quae aut optio fuga similique illum in incidunt, ipsa, soluta ullam
             adipisci iusto! Quis rem nemo nihil? Beatae, repellendus eligendi?
@@ -36,11 +35,9 @@ export default function About() {
             dolorem veniam in, quidem facilis hic repudiandae sunt atque quae.
           </p>
           <p className="about__testamonial-4 about__testamonial">
-            Temporibus recusandae dolorem quas? Sint officiis repellendus, facilis aliquid alias
-            asperiores nulla mollitia possimus maxime id. Perspiciatis quibusdam expedita obcaecati
-            nostrum exercitationem aliquid necessitatibus deleniti ipsam recusandae architecto,
-            fugit, odit maiores, dolorem ut in rerum deserunt? Reprehenderit, quibusdam incidunt?
-            Eos, incidunt consequatur!
+            Perspiciatis quibusdam expedita obcaecati nostrum exercitationem aliquid necessitatibus
+            deleniti ipsam recusandae architecto, fugit, odit maiores, dolorem ut in rerum deserunt?
+            Reprehenderit, quibusdam incidunt? Eos, incidunt consequatur!
           </p>
         </div>
       </div>

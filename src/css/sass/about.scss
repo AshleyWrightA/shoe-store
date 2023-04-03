@@ -3,19 +3,11 @@ $about_background: rgb(231, 231, 231);
 .about {
   background-color: $about_background;
 
-  &__info {
-    padding: 300px 0;
-
-    height: 18rem;
-
-    display: flex;
-
-    position: relative;
-
-    overflow: hidden;
+  &__info-section {
+    padding-top: 64px;
   }
 
-  &__info-wrapper {
+  &__info {
     padding: 2rem;
 
     display: flex;
@@ -23,9 +15,10 @@ $about_background: rgb(231, 231, 231);
     justify-content: center;
     gap: 2rem;
 
-    color: white;
+    position: absolute;
+    top: 60px;
 
-    z-index: 1;
+    color: white;
 
     h1 {
       margin-left: 45vw;
@@ -44,18 +37,16 @@ $about_background: rgb(231, 231, 231);
   }
 
   &__image {
+    height: 40vh;
     width: 100%;
-
-    position: absolute;
-    bottom: 50px;
 
     transform: scaleX(-1);
 
     object-fit: cover;
-    object-position: right;
+    object-position: bottom right;
   }
 
-  &__testamonials {
+  &__testamonial-section {
     padding: 4rem;
 
     display: grid;
@@ -117,6 +108,56 @@ $about_background: rgb(231, 231, 231);
     box-shadow: 15px 15px rgb(117, 105, 99);
     &:hover {
       box-shadow: 15px 15px 5px rgb(117, 105, 99);
+    }
+  }
+
+  // Mobile
+  @media (max-width: 800px) {
+    .about {
+      &__info-section {
+        margin: 0;
+
+        height: auto;
+      }
+
+      &__info {
+        position: initial;
+        color: black;
+
+        h1 {
+          margin: 0;
+
+          font-size: 3.2rem;
+          text-shadow: none;
+        }
+        p {
+          margin: 0;
+
+          font-size: 1.6rem;
+          text-shadow: none;
+        }
+      }
+
+      &__testamonial {
+        display: flex;
+        align-items: center;
+      }
+
+      &__testamonial-1 {
+        grid-column: 1/4;
+      }
+
+      &__testamonial-2 {
+        grid-column: 2/5;
+      }
+
+      &__testamonial-3 {
+        grid-column: 1/4;
+      }
+
+      &__testamonial-4 {
+        grid-column: 2/5;
+      }
     }
   }
 }
