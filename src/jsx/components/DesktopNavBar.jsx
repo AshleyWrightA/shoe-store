@@ -6,7 +6,7 @@ export default function DesktopNavbar() {
     <>
       <div className="navbar">
         <Link to="/" className="navbar__logo">
-          Boots
+          BRAND
         </Link>
         <nav className="navbar__nav">
           <Link to="../">Home</Link>

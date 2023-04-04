@@ -1,10 +1,11 @@
-$about_background: rgb(231, 231, 231);
+$about_background: rgb(10, 10, 10);
+$font_color: white;
 
 .about {
   background-color: $about_background;
 
   &__info-section {
-    padding-top: 64px;
+    padding-top: 100px;
   }
 
   &__info {
@@ -16,9 +17,9 @@ $about_background: rgb(231, 231, 231);
     gap: 2rem;
 
     position: absolute;
-    top: 60px;
+    top: 100px;
 
-    color: white;
+    color: $font_color;
 
     h1 {
       margin-left: 45vw;
@@ -122,7 +123,6 @@ $about_background: rgb(231, 231, 231);
 
       &__info {
         position: initial;
-        color: black;
 
         h1 {
           margin: 0;

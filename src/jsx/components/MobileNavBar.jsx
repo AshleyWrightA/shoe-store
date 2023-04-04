@@ -6,7 +6,7 @@ export default function MobileNavbar() {
     <>
       <div className="navbar">
         <Link to="/" className="navbar__logo">
-          Boots
+          BRAND
         </Link>
         <nav className="navbar__nav">
           <Icon className="navbar__bars-icon" icon="uis:bars" />

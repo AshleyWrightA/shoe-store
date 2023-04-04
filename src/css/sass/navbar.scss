@@ -1,5 +1,6 @@
-$navbar_font_color: rgb(0, 0, 0);
-$navbar_bg_color: rgba(230, 230, 230, 0.6);
+$navbar_font_color: rgb(255, 255, 255);
+$navbar_bg_color: rgba(10, 10, 10, 0.6);
+$navbar_mobile_bg_color: rgb(10, 10, 10);
 
 .navbar {
   padding: 2rem 0;
@@ -16,7 +17,7 @@ $navbar_bg_color: rgba(230, 230, 230, 0.6);
   z-index: 9999;
 
   &__nav {
-    padding-right: 10%;
+    margin-right: 10%;
 
     display: flex;
     justify-content: space-evenly;
@@ -46,7 +47,7 @@ $navbar_bg_color: rgba(230, 230, 230, 0.6);
   }
 
   &__logo {
-    padding-left: 8%;
+    margin: 20px;
 
     font-size: 6rem;
     font-weight: bold;
@@ -77,5 +78,11 @@ $navbar_bg_color: rgba(230, 230, 230, 0.6);
     &:visited {
       color: $navbar_font_color;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    background-color: $navbar_mobile_bg_color;
   }
 }

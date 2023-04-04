@@ -1,33 +1,16 @@
-$home_image: url(../assets/images/boots_splash.jpeg);
-$hero_font_color: rgb(230, 230, 230);
-$hero_background: rgba(110, 110, 110, 0.7);
-$hero_underline: rgb(44, 37, 41);
-$hero_button_hover: rgb(128, 174, 189);
+$hero_font_color: rgb(240, 240, 240);
+$hero_link_color: rgb(0, 0, 0);
+$hero_background: rgba(61, 61, 61, 0.6);
+$hero_underline: rgb(201, 201, 201);
 
 .home {
   display: flex;
   justify-content: flex-end;
 
-  &__background-parent {
-    height: 100vh;
-    width: 100vw;
+  &__splash {
+    width: 100%;
 
-    overflow: hidden;
-  }
-
-  &__background-child {
-    height: 100%;
-    width: 100vw;
-
-    background-image: $home_image;
-    background-size: cover;
-    background-position: center 100%;
-
-    transition: all 1s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
+    position: fixed;
   }
 
   &__hero {
@@ -43,33 +26,30 @@ $hero_button_hover: rgb(128, 174, 189);
     color: $hero_font_color;
   }
 
-  a {
+  &__anchor-shop {
     margin-top: 1rem;
     margin-left: -30px;
     padding: 0.5rem;
 
-    color: $hero_underline;
-    font-size: 3.6rem;
+    color: $hero_link_color;
+    font-size: 4.8rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: $hero_font_color;
 
     &:hover {
       color: $hero_font_color;
-      background-color: $hero_background;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
     &::before {
       content: "";
       position: absolute;
       display: block;
-      width: 70%;
+      width: 60%;
       height: 4px;
       bottom: 0px;
-      left: 50px;
-      background-color: #000;
+      left: 100px;
+      background-color: $hero_underline;
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -80,37 +60,40 @@ $hero_button_hover: rgb(128, 174, 189);
   }
 
   h1 {
-    width: 47%;
+    width: 45%;
 
-    font-size: 4.8rem;
+    font-size: 5.4rem;
     font-weight: bold;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
-    background-color: $hero_background;
     border-bottom: solid $hero_underline 4px;
   }
   h2 {
     margin-left: 30px;
 
-    font-size: 3.6rem;
+    font-size: 4.8rem;
     font-weight: bold;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
-    background-color: $hero_background;
     border-bottom: solid $hero_underline 4px;
   }
 }
 
 @media (max-width: 600px) {
   .home {
-    &__hero {
-      width: 75%;
+    height: 100%;
 
-      top: 30%;
-      left: 20%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: black;
+
+    &__splash {
+      width: 200%;
     }
 
-    &__background-child {
+    &__anchor-shop {
+      margin: 0 0 100px 0;
+
+      color: $hero_font_color;
     }
   }
 }

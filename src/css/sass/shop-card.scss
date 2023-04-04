@@ -1,4 +1,6 @@
-$shopcard_font-color: rgb(0, 0, 0);
+$shopcard_font_color: rgb(241, 241, 241);
+$shopcard_add_button_color: rgb(60, 60, 60);
+$shopcard_add_button_color_hover: rgb(150, 150, 150);
 
 .card {
   &__container {
@@ -60,7 +62,7 @@ $shopcard_font-color: rgb(0, 0, 0);
     font-size: 2rem;
     text-decoration: none;
 
-    background-color: rgb(22, 22, 22);
+    background-color: $shopcard_add_button_color;
 
     border: none;
     border-radius: 20px;
@@ -70,7 +72,7 @@ $shopcard_font-color: rgb(0, 0, 0);
     cursor: pointer;
 
     &:hover {
-      background-color: rgb(143, 143, 143);
+      background-color: $shopcard_add_button_color_hover;
     }
 
     &:active {

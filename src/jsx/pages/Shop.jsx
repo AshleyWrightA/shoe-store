@@ -1,5 +1,4 @@
 //React Imports
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 //Components
@@ -20,9 +19,6 @@ export default function Shop() {
     <>
       <Navbar />
       <div className="shop">
-        <nav className="shop__side-nav">
-          <Link to="">All Shoes</Link>
-        </nav>
         <div className="shop__container">
           {fetchedData.map((e) => (
             <ShopCard

@@ -10,7 +10,7 @@ export default function About() {
         <div className="about__info-section">
           <img className="about__image" src="./assets/images/about_splash.jpg" alt="" />
           <div className="about__info">
-            <h1>Our Boots are different...or are they?</h1>
+            <h1>Our brand is different.</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit assumenda voluptatum
               laborum recusandae quibusdam ratione tenetur exercitationem ducimus, esse sequi
