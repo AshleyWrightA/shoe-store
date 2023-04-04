@@ -10,6 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     document.querySelector(".home__splash").playbackRate = 0.8;
+    document.querySelector(".home__splash").play();
   });
 
   useEffect(() => {
@@ -31,8 +32,8 @@ function DesktopHome() {
     <>
       <Navbar />
       <div className="home">
-        <video className="home__splash" autoPlay loop>
-          <source src="src/assets/images/boots_splash.webm" type="video/webm"></source>
+        <video className="home__splash" autoPlay loop muted>
+          <source src="assets/images/boots_splash.webm" type="video/webm"></source>
         </video>
         <div className="home__hero">
           <h1 className="home__intro">BRAND </h1>
@@ -52,8 +53,8 @@ function MobileHome() {
       <Navbar />
       <div className="home">
         <div></div>
-        <video className="home__splash" autoPlay loop>
-          <source src="src/assets/images/boots_splash.webm" type="video/webm"></source>
+        <video className="home__splash" autoPlay loop muted>
+          <source src="assets/images/boots_splash.webm" type="video/webm"></source>
         </video>
         <Link to="/shop" className="home__anchor-shop">
           View Catalog
