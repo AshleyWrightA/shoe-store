@@ -32,7 +32,7 @@ $navbar_mobile_bg_color: rgb(10, 10, 10);
       height: 2px;
       bottom: -4px;
       left: 8px;
-      background-color: #000;
+      background-color: $navbar_font_color;
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }

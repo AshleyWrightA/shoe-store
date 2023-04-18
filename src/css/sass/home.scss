@@ -36,6 +36,7 @@ $hero_underline: rgb(201, 201, 201);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
+    text-shadow: $hero_font_color 1px 0 0;
 
     &:hover {
       color: $hero_font_color;
