@@ -1,6 +1,4 @@
-$navbar_font_color: rgb(255, 255, 255);
-$navbar_bg_color: rgba(10, 10, 10, 0.6);
-$navbar_mobile_bg_color: rgb(10, 10, 10);
+@import "_variables";
 
 .navbar {
   padding: 2rem 0;
@@ -84,5 +82,6 @@ $navbar_mobile_bg_color: rgb(10, 10, 10);
 @media (max-width: 600px) {
   .navbar {
     background-color: $navbar_mobile_bg_color;
+    color: $navbar_font_color;
   }
 }

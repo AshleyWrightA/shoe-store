@@ -20,7 +20,6 @@ export default function Home() {
       setDeviceHome(<DesktopHome />);
     } else if (screenWidth <= mobileBreakPoint) {
       setDeviceHome(<MobileHome />);
-      console.log("MOBILE");
     }
   }, [screenWidth]);
 
@@ -52,10 +51,11 @@ function MobileHome() {
     <>
       <Navbar />
       <div className="home">
-        <div></div>
-        <video className="home__splash" autoPlay loop muted>
-          <source src="assets/images/boots_splash.webm" type="video/webm"></source>
-        </video>
+        <div className="home__video-wrapper">
+          <video className="home__splash" autoPlay loop muted>
+            <source src="assets/images/boots_splash.webm" type="video/webm"></source>
+          </video>
+        </div>
         <Link to="/shop" className="home__anchor-shop">
           View Catalog
         </Link>

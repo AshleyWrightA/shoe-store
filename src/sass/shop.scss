@@ -1,4 +1,4 @@
-$shop_background: rgb(10, 10, 10);
+@import "_variables.scss";
 
 .shop {
   padding: 3rem;
@@ -6,7 +6,7 @@ $shop_background: rgb(10, 10, 10);
   display: flex;
   justify-content: center;
 
-  background-color: $shop_background;
+  background-color: $background;
 
   &__side-nav {
     height: 100%;

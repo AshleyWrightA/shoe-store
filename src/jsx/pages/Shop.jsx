@@ -1,5 +1,6 @@
-//React Imports
+//Library Imports
 import { useContext } from "react";
+import { v4 } from "uuid";
 
 //Components
 import Navbar from "../components/Navbar";
@@ -22,7 +23,7 @@ export default function Shop() {
         <div className="shop__container">
           {fetchedData.map((e) => (
             <ShopCard
-              key={e.key}
+              key={v4()}
               imgPath={`./assets/images/${e.imgPath}`}
               displayName={e.displayName}
               sysName={e.sysName}
