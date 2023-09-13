@@ -1,14 +1,15 @@
 import { useContext } from "react";
+import { Icon } from "@iconify/react";
 import { v4 } from "uuid";
 
 import { CartContext } from "../context/CartContext";
 import { FetchedDataContext } from "../context/FetchedDataContext";
 import Navbar from "../components/Navbar";
-import CartContainer from "../components/CartComponents/CartContainer";
-import CartHeader from "../components/CartComponents/CartHeader";
-import CartButton from "../components/CartComponents/CartButton";
-import CartItems from "../components/CartComponents/CartItems";
-import CartCard from "../components/CartCardComponents/CartCard";
+import CartContainer from "../components/CartPage/CartContainer";
+import CartHeader from "../components/CartPage/CartHeader";
+import CartButton from "../components/CartPage/CartButton";
+import CartItems from "../components/CartPage/CartItems";
+import CartCard from "../components/CartCard/CartCard";
 import "../../css/cart.min.css";
 
 export default function Cart() {
@@ -21,7 +22,7 @@ export default function Cart() {
       key={v4()}
       name={e.displayName}
       sysName={e.sysName}
-      img={`./src/assets/images/${e.imgPath}`}
+      img={`/src/assets/images/${e.imgPath}`}
     />
   ));
 
@@ -48,17 +49,11 @@ export default function Cart() {
         <Navbar />
         <CartContainer>
           <CartHeader>Your Cart is empty</CartHeader>
+          <Icon className="cart__icon" icon="ic:outline-shopping-cart" />
           <CartItems>{cartItemCards}</CartItems>
           <CartButton route={"/shop"}>Back to Shop</CartButton>
         </CartContainer>
       </>
     );
   }
-}
-
-{
-  /* <Icon className="cart__icon" icon="ic:outline-shopping-cart"></Icon>
-  <Link className="cart__back" to="/shop">
-    Back to shop
-  </Link> */
 }

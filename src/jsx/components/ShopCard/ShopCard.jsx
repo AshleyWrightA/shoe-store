@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
-import "../../css/shop-card.min.css";
+import { CartContext } from "../../context/CartContext";
+import "../../../css/shop-card.min.css";
 
 export default function ShopCard(props) {
   const { imgPath, displayName, sysName, price } = props;

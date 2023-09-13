@@ -32,7 +32,7 @@ function DesktopHome() {
       <Navbar />
       <div className="home">
         <video className="home__splash" autoPlay loop muted>
-          <source src="assets/images/boots_splash.webm" type="video/webm"></source>
+          <source src="/src/assets/images/boots_splash.webm" type="video/webm"></source>
         </video>
         <div className="home__hero">
           <h1 className="home__intro">BRAND </h1>

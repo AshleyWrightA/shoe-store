@@ -1,5 +1,6 @@
 //Third Party Imports
 import { useState, useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 //Local Imports
 import { CartContext } from "../context/CartContext";
@@ -11,21 +12,30 @@ export default function Navbar() {
   const { cartItems } = useContext(CartContext);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [deviceNavBar, setDeviceNavBar] = useState(<DesktopNavbar />);
-  const mobileBreakPoint = 600;
+  const mobileBreakPoint = 768;
+  const location = useLocation();
+  let navStyle = "navbar__home";
 
   //componentDidUpdate cart
   useEffect(() => {
     countCartItems(cartItems);
   }, [cartItems]);
 
+  useEffect(() => {
+    if (location.pathname === "/shop") {
+      navStyle = "navbar__shop";
+    }
+    console.log(location.pathname, navStyle);
+  }, [location.pathname]);
+
   //componentDidUpdate screenWidth
   useEffect(() => {
     window.addEventListener("resize", setScreenWidth);
     setScreenWidth(window.innerWidth);
     if (screenWidth < mobileBreakPoint) {
-      setDeviceNavBar(<MobileNavbar />);
+      setDeviceNavBar(<MobileNavbar page={navStyle} />);
     } else if (screenWidth > mobileBreakPoint) {
-      setDeviceNavBar(<DesktopNavbar />);
+      setDeviceNavBar(<DesktopNavbar page={navStyle} />);
     }
   }, [screenWidth]);
 

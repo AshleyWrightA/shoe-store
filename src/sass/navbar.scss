@@ -11,8 +11,14 @@
 
   background-color: $navbar_bg_color;
 
-  position: absolute;
-  z-index: 9999;
+  &__home {
+    position: absolute;
+    z-index: 9999;
+  }
+
+  &__shop {
+    position: relative;
+  }
 
   &__nav {
     margin-right: 10%;
