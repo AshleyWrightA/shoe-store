@@ -4,12 +4,12 @@ import { v4 } from "uuid";
 
 import { CartContext } from "../context/CartContext";
 import { FetchedDataContext } from "../context/FetchedDataContext";
-import Navbar from "../components/Navbar";
-import CartContainer from "../components/CartPage/CartContainer";
-import CartHeader from "../components/CartPage/CartHeader";
-import CartButton from "../components/CartPage/CartButton";
-import CartItems from "../components/CartPage/CartItems";
-import CartCard from "../components/CartCard/CartCard";
+import Navbar from "../components/navbar/Navbar";
+import CartContainer from "../components/cartpage/CartContainer";
+import CartHeader from "../components/cartpage/CartHeader";
+import CartButton from "../components/cartpage/CartButton";
+import CartItems from "../components/cartpage/CartItems";
+import CartCard from "../components/cartcard/CartCard";
 import "../../css/cart.min.css";
 
 export default function Cart() {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import "../../css/home.min.css";
 import { useEffect, useState } from "react";
 
@@ -53,7 +53,7 @@ function MobileHome() {
       <div className="home">
         <div className="home__video-wrapper">
           <video className="home__splash" autoPlay loop muted>
-            <source src="assets/images/boots_splash.webm" type="video/webm"></source>
+            <source src="/src/assets/images/boots_splash.webm" type="video/webm"></source>
           </video>
         </div>
         <Link to="/shop" className="home__anchor-shop">

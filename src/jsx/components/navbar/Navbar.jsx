@@ -1,22 +1,22 @@
 //Third Party Imports
 import { useState, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 //Local Imports
-import { CartContext } from "../context/CartContext";
-import DesktopNavbar from "./DesktopNavBar";
-import MobileNavbar from "./MobileNavBar";
-import "../../css/navbar.min.css";
+import { CartContext } from "../../context/CartContext";
+import NavContainer from "./NavContainer";
+import NavCart from "./NavCart";
+import "../../../css/navbar.min.css";
 
 export default function Navbar() {
   const { cartItems } = useContext(CartContext);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [deviceNavBar, setDeviceNavBar] = useState(<DesktopNavbar />);
   const mobileBreakPoint = 768;
   const location = useLocation();
   let navStyle = "navbar__home";
 
-  //componentDidUpdate cart
   useEffect(() => {
     countCartItems(cartItems);
   }, [cartItems]);
@@ -25,22 +25,25 @@ export default function Navbar() {
     if (location.pathname === "/shop") {
       navStyle = "navbar__shop";
     }
-    console.log(location.pathname, navStyle);
   }, [location.pathname]);
 
-  //componentDidUpdate screenWidth
   useEffect(() => {
     window.addEventListener("resize", setScreenWidth);
     setScreenWidth(window.innerWidth);
-    if (screenWidth < mobileBreakPoint) {
-      setDeviceNavBar(<MobileNavbar page={navStyle} />);
-    } else if (screenWidth > mobileBreakPoint) {
-      setDeviceNavBar(<DesktopNavbar page={navStyle} />);
-    }
   }, [screenWidth]);
 
   //Return component based on screen size
-  return deviceNavBar;
+  return (
+    <NavContainer page={navStyle}>
+      <Link to="/" className="navbar__logo">
+        BRAND
+      </Link>
+      {screenWidth > mobileBreakPoint && <Link to="../">Home</Link>}
+      {screenWidth > mobileBreakPoint && <Link to="../shop">Shop</Link>}
+      {screenWidth < mobileBreakPoint && <Icon className="navbar__bars-icon" icon="uis:bars" />}
+      <NavCart />
+    </NavContainer>
+  );
 }
 
 function countCartItems(e) {

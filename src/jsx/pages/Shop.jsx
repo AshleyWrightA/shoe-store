@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { v4 } from "uuid";
 
 //Components
-import Navbar from "../components/Navbar";
-import ShopContainer from "../components/ShopPage/ShopContainer";
-import ShopSearch from "../components/ShopPage/ShopSearch";
-import ShopCard from "../components/ShopCard/ShopCard";
+import Navbar from "../components/navbar/Navbar";
+import ShopContainer from "../components/shoppage/ShopContainer";
+import ShopSearch from "../components/shoppage/ShopSearch";
+import ShopCard from "../components/shopcard/ShopCard";
 
 //Context
 import { FetchedDataContext } from "../context/FetchedDataContext";
