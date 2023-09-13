@@ -5,7 +5,7 @@ import { FetchedDataContext } from "./FetchedDataContext";
 export const CartContext = createContext();
 
 // Provider
-export function CartProvider(props) {
+export function CartProvider({ children }) {
   //State
   const fetchedData = useContext(FetchedDataContext);
   const [cartItems, setCartItems] = useState([]);
@@ -35,5 +35,5 @@ export function CartProvider(props) {
     removeCartItem,
   };
 
-  return <CartContext.Provider value={cartContextValue}>{props.children}</CartContext.Provider>;
+  return <CartContext.Provider value={cartContextValue}>{children}</CartContext.Provider>;
 }

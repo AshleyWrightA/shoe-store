@@ -1,6 +1,5 @@
 $container_background: rgba(0, 0, 0, 0.9);
 $cart-card-font: rgb(230, 230, 230);
-$img_cart_bg: url(../assets/images/cart_bg.jpg);
 
 .cart {
   min-height: 100vh;
@@ -9,7 +8,6 @@ $img_cart_bg: url(../assets/images/cart_bg.jpg);
   justify-content: center;
   align-items: center;
 
-  background-image: $img_cart_bg;
   background-size: 65%;
 
   overflow: hidden;
@@ -86,8 +84,7 @@ $img_cart_bg: url(../assets/images/cart_bg.jpg);
     -webkit-animation: rock 4.5s linear infinite;
   }
 
-  &__back,
-  &__checkout {
+  &__button {
     padding: 1.5rem 2rem;
 
     color: white;

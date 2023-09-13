@@ -1,1 +1,1 @@
-{"version":3,"sources":["../sass/shop.scss","../sass/_variables.scss"],"names":[],"mappings":"AAEA,MACE,YAAA,CAEA,YAAA,CACA,sBAAA,CAEA,qBCRW,CDUX,gBACE,WAAA,CACA,UAAA,CAGF,iBACE,WAAA,CAEA,gBAAA,CAEA,YAAA,CACA,0DAAA,CACA,QAAA","file":"shop.min.css"}
+{"version":3,"sources":["src/sass/shop.scss","src/sass/_variables.scss"],"names":[],"mappings":"AAEA,MACE,YAAA,CAEA,YAAA,CACA,sBAAA,CAEA,qBCRW,CDUX,gBACE,WAAA,CACA,UAAA,CAGF,iBACE,WAAA,CAEA,gBAAA,CAEA,YAAA,CACA,0DAAA,CACA,QAAA","file":"shop.min.css"}

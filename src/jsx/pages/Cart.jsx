@@ -1,54 +1,64 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
+import { v4 } from "uuid";
+
 import { CartContext } from "../context/CartContext";
 import { FetchedDataContext } from "../context/FetchedDataContext";
 import Navbar from "../components/Navbar";
-import CartCard from "../components/CartCard";
+import CartContainer from "../components/CartComponents/CartContainer";
+import CartHeader from "../components/CartComponents/CartHeader";
+import CartButton from "../components/CartComponents/CartButton";
+import CartItems from "../components/CartComponents/CartItems";
+import CartCard from "../components/CartCardComponents/CartCard";
 import "../../css/cart.min.css";
 
 export default function Cart() {
+  let emptyCart;
   const { cartItems } = useContext(CartContext);
   const fetchedData = useContext(FetchedDataContext);
-  let mappedData = [];
-
   const cartData = fetchedData.filter((e) => cartItems[e.sysName] > 0);
-  mappedData = cartData.map((e) => (
+  const cartItemCards = cartData.map((e) => (
     <CartCard
-      key={e.key}
+      key={v4()}
       name={e.displayName}
       sysName={e.sysName}
-      img={`./assets/images/${e.imgPath}`}
+      img={`./src/assets/images/${e.imgPath}`}
     />
   ));
 
-  if (mappedData.length > 0) {
+  if (!cartItemCards.length <= 0) {
+    emptyCart = false;
+  } else {
+    emptyCart = true;
+  }
+
+  if (!emptyCart) {
     return (
       <>
         <Navbar />
-        <div className="cart">
-          <div className="cart__container">
-            <h1 className="cart__header">Your Cart</h1>
-            <div className="cart__items">{mappedData}</div>
-            <button className="cart__checkout">Checkout</button>
-          </div>
-        </div>
+        <CartContainer>
+          <CartHeader>Your Cart</CartHeader>
+          <CartItems>{cartItemCards}</CartItems>
+          <CartButton>Checkout</CartButton>
+        </CartContainer>
       </>
     );
-  } else if (mappedData.length <= 0) {
+  } else {
     return (
       <>
         <Navbar />
-        <div className="cart">
-          <div className="cart__container">
-            <h1 className="cart__header">Your Cart is empty</h1>
-            <Icon className="cart__icon" icon="ic:outline-shopping-cart"></Icon>
-            <Link className="cart__back" to="/shop">
-              Back to shop
-            </Link>
-          </div>
-        </div>
+        <CartContainer>
+          <CartHeader>Your Cart is empty</CartHeader>
+          <CartItems>{cartItemCards}</CartItems>
+          <CartButton route={"/shop"}>Back to Shop</CartButton>
+        </CartContainer>
       </>
     );
   }
+}
+
+{
+  /* <Icon className="cart__icon" icon="ic:outline-shopping-cart"></Icon>
+  <Link className="cart__back" to="/shop">
+    Back to shop
+  </Link> */
 }

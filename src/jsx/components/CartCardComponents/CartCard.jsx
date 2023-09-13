@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
-export default function CartCard(props) {
-  const { name, sysName, img } = props;
+export default function CartCard({ name, sysName, img }) {
   const { cartItems, addCartItem, removeCartItem } = useContext(CartContext);
 
   return (
