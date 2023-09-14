@@ -1,10 +1,8 @@
-import React from "react";
-
-export default function ShopSearch() {
+export default function ShopSearch({ handleSearch }) {
   return (
-    <div>
+    <div className="shop__search">
       <form>
-        <input type="text" name="" id="" />
+        <input type="text" name="" id="" onChange={handleSearch} />
       </form>
     </div>
   );

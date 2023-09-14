@@ -1,24 +1,37 @@
-//Library Imports
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 import { v4 } from "uuid";
-
-//Components
 import Navbar from "../components/navbar/Navbar";
 import ShopContainer from "../components/shoppage/ShopContainer";
 import ShopSearch from "../components/shoppage/ShopSearch";
 import ShopCard from "../components/shopcard/ShopCard";
-
-//Context
-import { FetchedDataContext } from "../context/FetchedDataContext";
-
-//CSS
+import { useShopData } from "../context/ShopDataContext";
 import "../../css/shop.min.css";
 
 export default function Shop() {
   //State
-  const fetchedData = useContext(FetchedDataContext);
+  const shopData = useShopData();
+  const [searchResult, setSearchResult] = useState([]);
 
-  const shopItems = fetchedData.map((e) => (
+  useEffect(() => {
+    setSearchResult(shopData);
+  }, [shopData]);
+
+  function handleSearch(e) {
+    const query = e.target.value.toLowerCase();
+    if (query === "") {
+      setSearchResult(shopData);
+      return;
+    }
+
+    const searchData = shopData.filter((item) => {
+      if (item.displayName.toLowerCase().includes(query)) {
+        return item;
+      }
+    });
+    setSearchResult(searchData);
+  }
+
+  const shopItems = searchResult.map((e) => (
     <ShopCard
       key={v4()}
       imgPath={`./src/assets/images/${e.imgPath}`}
@@ -31,7 +44,7 @@ export default function Shop() {
   return (
     <>
       <Navbar />
-      <ShopSearch />
+      <ShopSearch handleSearch={handleSearch} />
       <ShopContainer>{shopItems}</ShopContainer>
     </>
   );

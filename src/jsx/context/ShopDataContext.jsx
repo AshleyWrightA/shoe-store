@@ -2,18 +2,25 @@
 
 //Firebase
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, setDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 //React
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-export const FetchedDataContext = createContext();
+const shopDataContext = createContext();
 
-export function FetchedDataProvider(props) {
-  const [fetchedData, setFetchedData] = useState([]);
+export function useShopData() {
+  return useContext(shopDataContext);
+}
+
+// TODO
+// FIX SHOPDATA
+
+export function ShopDataProvider({ children }) {
+  const [shopData, setShopData] = useState([]);
 
   useEffect(() => {
-    const fetchedDataArr = [];
-    getStoreData().then((data) => {
+    const shopDataArr = [];
+    getShopData().then((data) => {
       for (let i = 0; i < data.length; i++) {
         let item = {};
         item["id"] = data[i].id;
@@ -21,9 +28,9 @@ export function FetchedDataProvider(props) {
         item["displayName"] = data[i].display_name;
         item["imgPath"] = data[i].img;
         item["price"] = data[i].price;
-        fetchedDataArr.push(item);
+        shopDataArr.push(item);
       }
-      fetchedDataArr.sort((a, b) => {
+      shopDataArr.sort((a, b) => {
         if (a.id < b.id) {
           return -1;
         } else if (a.id > b.id) {
@@ -32,16 +39,14 @@ export function FetchedDataProvider(props) {
           return 0;
         }
       });
-      setFetchedData(fetchedDataArr);
+      setShopData(shopDataArr);
     });
   }, []);
 
-  return (
-    <FetchedDataContext.Provider value={fetchedData}>{props.children}</FetchedDataContext.Provider>
-  );
+  return <shopDataContext.Provider value={shopData}>{children}</shopDataContext.Provider>;
 }
 
-async function getStoreData() {
+async function getShopData() {
   const firebaseConfig = {
     apiKey: "AIzaSyDY3hIeUOmFSM6KEXxSTUZH_JvL1xkNJG8",
     authDomain: "shoe-st.firebaseapp.com",

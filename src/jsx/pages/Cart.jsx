@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { v4 } from "uuid";
 
 import { CartContext } from "../context/CartContext";
-import { FetchedDataContext } from "../context/FetchedDataContext";
+import { useShopData } from "../context/ShopDataContext";
 import Navbar from "../components/navbar/Navbar";
 import CartContainer from "../components/cartpage/CartContainer";
 import CartHeader from "../components/cartpage/CartHeader";
@@ -14,9 +14,9 @@ import "../../css/cart.min.css";
 
 export default function Cart() {
   let emptyCart;
+  const shopData = useShopData();
   const { cartItems } = useContext(CartContext);
-  const fetchedData = useContext(FetchedDataContext);
-  const cartData = fetchedData.filter((e) => cartItems[e.sysName] > 0);
+  const cartData = shopData.filter((e) => cartItems[e.sysName] > 0);
   const cartItemCards = cartData.map((e) => (
     <CartCard
       key={v4()}

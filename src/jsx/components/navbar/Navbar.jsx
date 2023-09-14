@@ -13,9 +13,9 @@ import "../../../css/navbar.min.css";
 export default function Navbar() {
   const { cartItems } = useContext(CartContext);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [navStyle, setNavStyle] = useState("navbar__home");
   const mobileBreakPoint = 768;
   const location = useLocation();
-  let navStyle = "navbar__home";
 
   useEffect(() => {
     countCartItems(cartItems);
@@ -23,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (location.pathname === "/shop") {
-      navStyle = "navbar__shop";
+      setNavStyle("navbar__shop");
     }
   }, [location.pathname]);
 
