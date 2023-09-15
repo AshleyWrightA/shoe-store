@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 import Navbar from "../components/navbar/Navbar";
 import ShopContainer from "../components/shoppage/ShopContainer";
-import ShopSearch from "../components/shoppage/ShopSearch";
+import ShopSide from "../components/shoppage/ShopSide";
 import ShopCard from "../components/shopcard/ShopCard";
 import { useShopData } from "../context/ShopDataContext";
 import "../../css/shop.min.css";
+import ShopSearch from "../components/shoppage/ShopSearch";
+import ShopContent from "../components/shoppage/ShopContent";
 
 export default function Shop() {
   //State
@@ -44,8 +46,12 @@ export default function Shop() {
   return (
     <>
       <Navbar />
-      <ShopSearch handleSearch={handleSearch} />
-      <ShopContainer>{shopItems}</ShopContainer>
+      <ShopContent>
+        <ShopSide>
+          <ShopSearch handleSearch={handleSearch} />
+        </ShopSide>
+        <ShopContainer>{shopItems}</ShopContainer>
+      </ShopContent>
     </>
   );
 }
