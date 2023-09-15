@@ -3,15 +3,11 @@
 .navbar {
   padding: 2rem 0;
 
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   background-color: $navbar_bg_color;
 
   &__home {
+    width: 100%;
+
     position: absolute;
     z-index: 9999;
   }
@@ -21,10 +17,11 @@
   }
 
   &__nav {
-    margin-right: 10%;
+    width: 100%;
 
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     gap: 2rem;
 
     font-size: 2.4rem;
@@ -44,6 +41,10 @@
     a:hover::before {
       transform: scaleX(1);
     }
+  }
+  &__link-container {
+    display: flex;
+    gap: 2rem;
   }
 
   &__cart {

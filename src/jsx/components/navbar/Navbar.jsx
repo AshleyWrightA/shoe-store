@@ -1,12 +1,13 @@
 //Third Party Imports
 import { useState, useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 //Local Imports
 import { CartContext } from "../../context/CartContext";
 import NavContainer from "./NavContainer";
+import NavLinkContainer from "./NavLinkContainer";
 import NavCart from "./NavCart";
 import "../../../css/navbar.min.css";
 
@@ -38,10 +39,12 @@ export default function Navbar() {
       <Link to="/" className="navbar__logo">
         BRAND
       </Link>
-      {screenWidth > mobileBreakPoint && <Link to="../">Home</Link>}
-      {screenWidth > mobileBreakPoint && <Link to="../shop">Shop</Link>}
-      {screenWidth < mobileBreakPoint && <Icon className="navbar__bars-icon" icon="uis:bars" />}
-      <NavCart />
+      <NavLinkContainer>
+        {screenWidth > mobileBreakPoint && <Link to="../">Home</Link>}
+        {screenWidth > mobileBreakPoint && <Link to="../shop">Shop</Link>}
+        {screenWidth < mobileBreakPoint && <Icon className="navbar__bars-icon" icon="uis:bars" />}
+        <NavCart />
+      </NavLinkContainer>
     </NavContainer>
   );
 }
