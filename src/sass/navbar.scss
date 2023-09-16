@@ -27,10 +27,10 @@
     a::before {
       content: "";
       position: absolute;
-      width: 70%;
-      height: 2px;
-      bottom: -4px;
-      left: 8px;
+      width: 80%;
+      height: 4px;
+      bottom: -22px;
+      left: 22px;
       background-color: $navbar_font_color;
       transform: scaleX(0);
       transition: transform 0.3s ease;
@@ -43,6 +43,22 @@
   &__link-container {
     display: flex;
     gap: 2rem;
+
+    a::before {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 2px;
+      bottom: -4px;
+      left: 8px;
+      background-color: $navbar_font_color;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    a:hover::before {
+      transform: scaleX(1);
+    }
   }
 
   &__cart {
