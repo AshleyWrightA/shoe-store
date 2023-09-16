@@ -3,11 +3,11 @@
 .navbar {
   padding: 2rem 0;
 
+  width: 100%;
+
   background-color: $navbar_bg_color;
 
   &__home {
-    width: 100%;
-
     position: absolute;
     z-index: 9999;
   }
@@ -17,10 +17,8 @@
   }
 
   &__nav {
-    width: 100%;
-
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
 

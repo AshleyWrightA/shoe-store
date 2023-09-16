@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import "../../../css/shop-card.min.css";
 
 export default function ShopCard(props) {
   const { imgPath, displayName, sysName, price } = props;
-  const { addCartItem } = useContext(CartContext);
+  const { addCartItem } = useCart();
 
   return (
     <div className="card__container">

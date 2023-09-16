@@ -1,26 +1,25 @@
 //Third Party Imports
-import { useState, useContext, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
-//Local Imports
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import NavContainer from "./NavContainer";
 import NavLinkContainer from "./NavLinkContainer";
 import NavCart from "./NavCart";
 import "../../../css/navbar.min.css";
 
 export default function Navbar() {
-  const { cartItems } = useContext(CartContext);
+  const { storedCartItems } = useCart();
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [navStyle, setNavStyle] = useState("navbar__home");
   const mobileBreakPoint = 768;
   const location = useLocation();
 
   useEffect(() => {
-    countCartItems(cartItems);
-  }, [cartItems]);
+    countCartItems(storedCartItems);
+  }, [storedCartItems]);
 
   useEffect(() => {
     if (location.pathname === "/shop") {

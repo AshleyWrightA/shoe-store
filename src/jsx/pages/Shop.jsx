@@ -5,9 +5,9 @@ import ShopContainer from "../components/shoppage/ShopContainer";
 import ShopSide from "../components/shoppage/ShopSide";
 import ShopCard from "../components/shopcard/ShopCard";
 import { useShopData } from "../context/ShopDataContext";
-import "../../css/shop.min.css";
 import ShopSearch from "../components/shoppage/ShopSearch";
 import ShopContent from "../components/shoppage/ShopContent";
+import "../../css/shop.min.css";
 
 export default function Shop() {
   //State
@@ -36,7 +36,7 @@ export default function Shop() {
   const shopItems = searchResult.map((e) => (
     <ShopCard
       key={v4()}
-      imgPath={`./src/assets/images/${e.imgPath}`}
+      imgPath={`/${e.imgPath}`}
       displayName={e.displayName}
       sysName={e.sysName}
       price={e.price}

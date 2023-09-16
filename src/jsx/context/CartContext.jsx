@@ -1,14 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useShopData } from "./ShopDataContext";
 
 // Creating a Context.
 export const CartContext = createContext();
 
+export function useCart() {
+  return useContext(CartContext);
+}
+
 // Provider
 export function CartProvider({ children }) {
-  //State
   const shopData = useShopData();
-  const [cartItems, setCartItems] = useState([]);
+  const [storedCartItems, setStoredCartItems] = useState([]);
 
   //Fetch initial cart, each item is placed in an object with a value of 0.
   useEffect(() => {
@@ -16,21 +19,21 @@ export function CartProvider({ children }) {
     for (let i = 0; i < shopData.length; i++) {
       cart[shopData[i].sysName] = 0;
     }
-    setCartItems(cart);
+    setStoredCartItems(cart);
   }, [shopData]);
 
   //Add item to the cart
   function addCartItem(itemName) {
-    setCartItems((prev) => ({ ...prev, [itemName]: prev[itemName] + 1 }));
+    setStoredCartItems((prev) => ({ ...prev, [itemName]: prev[itemName] + 1 }));
   }
   //Remove item from the cart
   function removeCartItem(itemName) {
-    setCartItems((prev) => ({ ...prev, [itemName]: prev[itemName] - 1 }));
+    setStoredCartItems((prev) => ({ ...prev, [itemName]: prev[itemName] - 1 }));
   }
 
   //Importables from context provider
   const cartContextValue = {
-    cartItems,
+    storedCartItems,
     addCartItem,
     removeCartItem,
   };

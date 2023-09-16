@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 
 export default function CartCard({ name, sysName, img }) {
-  const { cartItems, addCartItem, removeCartItem } = useContext(CartContext);
+  const { storedCartItems, addCartItem, removeCartItem } = useCart();
 
   return (
     <div className="cart__cart-card">
@@ -16,7 +15,7 @@ export default function CartCard({ name, sysName, img }) {
           >
             -
           </button>
-          <p>{cartItems[sysName]}</p>
+          <p>{storedCartItems[sysName]}</p>
           <button
             className="cart__cart-card-add cart__add-remove"
             onClick={() => addCartItem(sysName)}

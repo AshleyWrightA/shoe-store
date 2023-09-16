@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { Icon } from "@iconify/react";
 import { v4 } from "uuid";
 
-import { CartContext } from "../context/CartContext";
 import { useShopData } from "../context/ShopDataContext";
+import { useCart } from "../context/CartContext";
 import Navbar from "../components/navbar/Navbar";
 import CartContainer from "../components/cartpage/CartContainer";
 import CartHeader from "../components/cartpage/CartHeader";
@@ -15,15 +14,15 @@ import "../../css/cart.min.css";
 export default function Cart() {
   let emptyCart;
   const shopData = useShopData();
-  const { cartItems } = useContext(CartContext);
-  const cartData = shopData.filter((e) => cartItems[e.sysName] > 0);
+  const { storedCartItems } = useCart();
+
+  shopData.forEach((e) => {
+    console.log(storedCartItems[e.sysName]);
+  });
+
+  const cartData = shopData.filter((e) => storedCartItems[e.sysName] > 0);
   const cartItemCards = cartData.map((e) => (
-    <CartCard
-      key={v4()}
-      name={e.displayName}
-      sysName={e.sysName}
-      img={`/src/assets/images/${e.imgPath}`}
-    />
+    <CartCard key={v4()} name={e.displayName} sysName={e.sysName} img={`/${e.imgPath}`} />
   ));
 
   if (!cartItemCards.length <= 0) {
