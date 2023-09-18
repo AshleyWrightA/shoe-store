@@ -22,7 +22,12 @@ export default function Cart() {
 
   const cartData = shopData.filter((e) => storedCartItems[e.sysName] > 0);
   const cartItemCards = cartData.map((e) => (
-    <CartCard key={v4()} name={e.displayName} sysName={e.sysName} img={`/${e.imgPath}`} />
+    <CartCard
+      key={v4()}
+      name={e.displayName}
+      sysName={e.sysName}
+      img={`/shoe-store/${e.imgPath}`}
+    />
   ));
 
   if (!cartItemCards.length <= 0) {
