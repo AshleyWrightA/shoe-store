@@ -36,7 +36,7 @@ export default function Shop() {
   const shopItems = searchResult.map((e) => (
     <ShopCard
       key={v4()}
-      imgPath={`/${e.imgPath}`}
+      imgPath={`/shoe-store/${e.imgPath}`}
       displayName={e.displayName}
       sysName={e.sysName}
       price={e.price}

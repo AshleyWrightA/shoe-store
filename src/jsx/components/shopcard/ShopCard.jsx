@@ -1,8 +1,7 @@
 import { useCart } from "../../context/CartContext";
 import "../../../css/shop-card.min.css";
 
-export default function ShopCard(props) {
-  const { imgPath, displayName, sysName, price } = props;
+export default function ShopCard({ imgPath, displayName, sysName, price }) {
   const { addCartItem } = useCart();
 
   return (
