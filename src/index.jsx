@@ -9,7 +9,7 @@ import "./css/meyer-reset.css";
 import "./css/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/shoe-store/">
     <App />
   </BrowserRouter>
 );

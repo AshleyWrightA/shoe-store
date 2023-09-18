@@ -2,7 +2,7 @@
   "name": "my-webpack-project",
   "private": false,
   "version": "1.0.0",
-  "homepage": ".",
+  "homepage": "https://ashleywrighta.github.io/shoe-store/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
